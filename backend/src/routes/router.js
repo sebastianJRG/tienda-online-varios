@@ -1,10 +1,8 @@
-const {Router} = require('express')
+const { Router } = require('express')
 const router = Router()
 
-router.get("/", (req, res)=>{
-    res.json({
-        message: "hola mundo"
-    })
-})
+const { clothesRouter } = require('./clothesRouter')
+
+router.use('/clothes', clothesRouter)
 
 module.exports = {router}
